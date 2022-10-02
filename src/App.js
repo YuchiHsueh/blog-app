@@ -43,27 +43,37 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Blog Posts</h1>
+      <div className='container w-50 mx-auto'>
+      <h1 className="mt-3">Blog Articles</h1>
       <Articles articles={articles} />
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter article name</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e)=>setName(e.target.value)}
-        />
-        <label htmlFor="text">Enter article text</label>
-        <input
-          type="text"
-          id="text"
-          value={text}
-          onChange={(e)=>setText(e.target.value)}
-        />
-        <button type='submit' className='btn btn-block'>
+
+      <form onSubmit={handleSubmit} className="w-50 mx-auto">
+        <div class="mb-3">
+          <label htmlFor="name" class="form-label">Article Name:</label>
+          <input
+            id="name"
+            type="text"
+            class="form-control"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div class="mb-3">
+          <label htmlFor="text" class="form-label">Article content:</label>
+          <textarea
+            id="text"
+            type="text"
+            class="form-control"
+            rows="3"
+            value={text}
+            onChange={(e)=>setText(e.target.value)}
+          ></textarea>
+        </div>
+        <button type='submit' className='w-100 btn btn-block btn-outline-dark'>
           Save Article
         </button>
       </form>
+      </div>
     </div>
   );
 }

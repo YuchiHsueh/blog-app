@@ -1,20 +1,18 @@
-import axios from 'axios';
 import React from 'react'
-import { useState, useEffect } from 'react';
-
-
 
 function Articles(props) {
-  
   return (
-    <div>
-      <ul>
-        {
-          props.articles.map(article =>
-            <li key={article.id}>{article.name} {article.text}</li>
-          )
-        }
-      </ul>
+    <div className='d-flex justify-content-center flex-column'>
+      {
+        props.articles.map(article =>
+          <div class="card w-75 mx-auto my-3" key={article.id}>
+            <h5 class="card-header">{article.name}</h5>
+            <div class="card-body">
+              <p class="card-text">{article.text}</p>
+            </div>
+          </div>
+        )
+      }
     </div>
   );
 }
